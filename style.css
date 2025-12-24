@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* DARK / LIGHT */
+.light {
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  color: black;
+}
+
+/* BLOBS */
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: float 8s infinite ease-in-out;
+}
+
+.pink { background: #ff4ecd; top: 10%; left: 5%; }
+.blue { background: #00f7ff; top: 50%; left: 70%; }
+.purple { background: #8f00ff; top: 80%; left: 20%; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profile-glow {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4ecd, #00f7ff);
+  padding: 5px;
+  box-shadow: 0 0 40px #00f7ff;
+}
+
+.profile-glow img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-size: 55px;
+  margin-top: 20px;
+}
+
+.hero span {
+  background: linear-gradient(90deg, #ff4ecd, #00f7ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+
+button, .resume-btn {
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff4ecd, #00f7ff);
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover, .resume-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 60px;
+  text-align: center;
+}
+
+.glass {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  margin: 60px;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill {
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff4ecd, #8f00ff);
+  box-shadow: 0 0 20px rgba(255,78,205,0.5);
+}
+
+/* PROJECTS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 260px;
+  padding: 40px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00f7ff, #8f00ff);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 0 35px #00f7ff;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    flex-direction: column;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.typing-skill {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+#skill-typing {
+  background: linear-gradient(90deg, #ff4ecd, #00f7ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  border-right: 3px solid #00f7ff;
+  padding-right: 6px;
+}
+
+.cert-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cert-card {
+  width: 260px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.12);
+  transition: 0.3s;
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+.cert-card span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+footer {
+  padding: 40px;
+  text-align: center;
+  opacity: 0.7;
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+#modalTech {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+#modalTech li {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ff4ecd, #00f7ff);
+  color: black;
+  font-size: 14px;
+}
+.modal-content {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 25px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.modal-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.modal-buttons a {
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff4ecd, #00f7ff);
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.modal-buttons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00f7ff;
+}
+.cursor-glow {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #00eaff, transparent 60%);
+  filter: blur(80px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+#tech-skills p,
+#contact p {
+  max-width: 800px;
+  margin: 15px auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.contact-box {
+  margin-top: 30px;
+}
+
+.contact-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00eaff, #00ffaa);
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00eaff;
+}
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #00eaff, #ff4ecd);
+  box-shadow: 0 0 30px #00eaff;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 10%;
+  border-radius: 50%;
+  object-fit: cover;
+}

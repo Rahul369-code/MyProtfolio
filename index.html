@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rahul | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- BLOBS -->
+<div class="blob pink"></div>
+<div class="blob blue"></div>
+<div class="blob purple"></div>
+<div class="cursor-glow"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <h2 class="logo">Rahul Saksena<span>.</span></h2>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+     <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#" onclick="toggleTheme()">🌙</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="profile-glow">
+    <img src="my image.jpg" alt="Profile">
+  </div>
+
+  <h1>I am <span id="typing"></span></h1>
+  <p>Full Stack Developer | UI Designer | Tech Explorer</p>
+
+  <div class="hero-buttons">
+    <button onclick="scrollToSection('projects')">View Projects</button>
+    <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="glass">
+  <h2>About Me</h2>
+  <p>
+    I’m a passionate developer focused on building visually stunning,
+    secure, and high-performance web applications with modern UI.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <h2>Skills</h2>
+  <h3 class="typing-skill">
+    <span id="skill-typing"></span>
+  </h3>
+</section>
+<section id="tech-skills" class="glass">
+  <h2>Professional Skills</h2>
+  <p>
+    I am a passionate and detail-oriented developer with strong fundamentals
+    in web development and backend technologies. I enjoy building scalable,
+    user-friendly applications and continuously improving my skills.
+  </p>
+
+  <div class="skill-box">
+    <span>HTML5 & CSS3</span>
+    <span>JavaScript (ES6+)</span>
+    <span>Java</span>
+    <span>SQL / MySQL</span>
+    <span>React (Basics)</span>
+    <span>DBMS</span>
+    <span>Computer Networks</span>
+    <span>Problem Solving</span>
+    <span>Team Collaboration</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+ <!-- PROJECT MODAL -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">×</span>
+
+    <img id="modalImg" alt="Project Image">
+
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+
+    <h4>Technologies Used</h4>
+    <ul id="modalTech"></ul>
+
+    <div class="modal-buttons">
+      <a id="githubLink" target="_blank">GitHub</a>
+      <a id="liveLink" target="_blank">Live Demo</a>
+    </div>
+
+  </div>
+</div>
+<section id="projects" class="glass">
+  <h2>Projects</h2>
+ <div class="cards">
+
+  <div class="card project-card"
+    data-img="triride.png"
+    data-title="TriRide – Cab Booking System"
+    data-desc="A web-based cab booking application with self-drive option, secure authentication, and user-friendly interface."
+    data-tech="HTML, CSS, JavaScript, Java, MySQL">
+    TriRide – Cab Booking System
+  </div>
+
+  <div class="card project-card"
+    data-img="airline.png"
+    data-title="Airline Management System"
+    data-desc="A system to manage flight schedules, passengers, and ticket booking efficiently."
+    data-tech="Java, JSP, Servlets, MySQL">
+    Airline Management System
+  </div>
+
+  <div class="card project-card"
+    data-img="college.png"
+    data-title="College Finder Platform"
+    data-desc="A platform to help students find colleges based on course, location, and eligibility."
+    data-tech="HTML, CSS, JavaScript">
+    College Finder Platform
+  </div>
+
+</div>
+</section>
+
+<section id="certifications" class="glass reveal">
+  <h2>Certifications</h2>
+
+  <div class="cert-cards">
+    <div class="cert-card">
+      <h4>Web Development</h4>
+      <p>HTML, CSS & JavaScript</p>
+      <span>Coursera / Udemy</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>Java Programming</h4>
+      <p>Core Java & OOP Concepts</p>
+      <span>NPTEL / College</span>
+    </div>
+
+    <div class="cert-card">
+      <h4>Database Management</h4>
+      <p>SQL & DBMS Fundamentals</p>
+      <span>Online Platform</span>
+    </div>
+  </div>
+</section>
+<section id="contact" class="glass">
+  <h2>Contact Me</h2>
+  <p>
+    I’m open to internships, entry-level roles, and collaborative projects.
+    Feel free to reach out if you’d like to work together or discuss opportunities.
+  </p>
+
+  <div class="contact-box">
+    <p><strong>Email:</strong> rahulsaksena@example.com</p>
+    <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+    <p><strong>Location:</strong> India</p>
+
+    <div class="contact-links">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2025 Rahul | Full Stack Developer</p>
+  <p>
+    <a href="#">LinkedIn</a> |
+    <a href="#">GitHub</a> |
+    <a href="#">Email</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
