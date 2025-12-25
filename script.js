@@ -1,11 +1,11 @@
-/* Typing Effect */
+/* ================= TYPING EFFECT (HERO) ================= */
 const text = ["Rahul", "a Developer", "a Designer"];
 let index = 0, char = 0;
 const typing = document.getElementById("typing");
 
 function typeEffect() {
   if (char < text[index].length) {
-    typing.innerHTML += text[index].charAt(char);
+    typing.textContent += text[index].charAt(char);
     char++;
     setTimeout(typeEffect, 120);
   } else {
@@ -15,7 +15,7 @@ function typeEffect() {
 
 function eraseEffect() {
   if (char > 0) {
-    typing.innerHTML = text[index].substring(0, char - 1);
+    typing.textContent = text[index].substring(0, char - 1);
     char--;
     setTimeout(eraseEffect, 80);
   } else {
@@ -26,21 +26,22 @@ function eraseEffect() {
 
 typeEffect();
 
-/* Scroll */
+/* ================= SMOOTH SCROLL ================= */
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
-/* Theme */
+/* ================= THEME TOGGLE ================= */
 function toggleTheme() {
   document.body.classList.toggle("light");
 }
 
-/* Mobile Menu */
+/* ================= MOBILE MENU ================= */
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("show");
 }
-/* Scroll Reveal */
+
+/* ================= SCROLL REVEAL ================= */
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".reveal").forEach(el => {
     const top = el.getBoundingClientRect().top;
@@ -49,7 +50,8 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-/* Typing Skills Animation */
+
+/* ================= SKILL TYPING ================= */
 const skills = [
   "HTML & CSS",
   "JavaScript",
@@ -85,6 +87,8 @@ function eraseSkill() {
 }
 
 typeSkill();
+
+/* ================= PROJECT MODAL ================= */
 const modal = document.getElementById("projectModal");
 const modalContent = document.querySelector(".modal-content");
 
@@ -95,12 +99,13 @@ document.querySelectorAll(".project-card").forEach(card => {
     document.getElementById("modalTitle").innerText = card.dataset.title;
     document.getElementById("modalDesc").innerText = card.dataset.desc;
 
-    // Tech list
+    // Tech stack list
     const techUl = document.getElementById("modalTech");
     techUl.innerHTML = "";
+
     card.dataset.tech.split(",").forEach(tech => {
       const li = document.createElement("li");
-      li.innerText = tech.trim();
+      li.textContent = tech.trim();
       techUl.appendChild(li);
     });
 
@@ -112,24 +117,26 @@ document.querySelectorAll(".project-card").forEach(card => {
   });
 });
 
-// Close modal
+/* Close Modal */
 function closeModal() {
   modal.style.display = "none";
 }
 
-// Close on outside click
+/* Close when clicking outside modal */
 modal.addEventListener("click", (e) => {
   if (!modalContent.contains(e.target)) {
     closeModal();
   }
 });
 
-// Close on ESC key
+/* Close on ESC key */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModal();
   }
 });
+
+/* ================= CURSOR GLOW ================= */
 const glow = document.querySelector(".cursor-glow");
 
 document.addEventListener("mousemove", (e) => {

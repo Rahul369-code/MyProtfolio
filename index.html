@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- BLOBS -->
@@ -26,18 +27,18 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-     <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#" onclick="toggleTheme()">🌙</a></li>
   </ul>
-</nav> 
+</nav>
 
 <!-- HERO -->
 <section id="home" class="hero">
-  <div class="profile-glow">
-    <img src="my image.jpg" alt="Profile">
+  <div class="profile-pic">
+    <img src="profile.jpg" alt="Rahul Profile Photo">
   </div>
 
-  <h1>I am <span id="typing"></span></h1>
+  <h1>I am <span id="typing">Rahul</span></h1>
   <p>Full Stack Developer | UI Designer | Tech Explorer</p>
 
   <div class="hero-buttons">
@@ -50,7 +51,7 @@
 <section id="about" class="glass">
   <h2>About Me</h2>
   <p>
-    I’m a passionate  developer focused on building visually stunning,
+    I’m a passionate developer focused on building visually stunning,
     secure, and high-performance web applications with modern UI.
   </p>
 </section>
@@ -62,12 +63,12 @@
     <span id="skill-typing"></span>
   </h3>
 </section>
+
 <section id="tech-skills" class="glass">
   <h2>Professional Skills</h2>
   <p>
     I am a passionate and detail-oriented developer with strong fundamentals
-    in web development and backend technologies. I enjoy building scalable,
-    user-friendly applications and continuously improving my skills.
+    in web development and backend technologies.
   </p>
 
   <div class="skill-box">
@@ -83,11 +84,9 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
- <!-- PROJECT MODAL -->
+<!-- ================= PROJECT MODAL ================= -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
-
     <span class="close" onclick="closeModal()">×</span>
 
     <img id="modalImg" alt="Project Image">
@@ -102,40 +101,52 @@
       <a id="githubLink" target="_blank">GitHub</a>
       <a id="liveLink" target="_blank">Live Demo</a>
     </div>
-
   </div>
 </div>
+
+<!-- PROJECTS -->
 <section id="projects" class="glass">
   <h2>Projects</h2>
- <div class="cards">
 
-  <div class="card project-card"
-    data-img="triride.png"
-    data-title="TriRide – Cab Booking System"
-    data-desc="A web-based cab booking application with self-drive option, secure authentication, and user-friendly interface."
-    data-tech="HTML, CSS, JavaScript, Java, MySQL">
-    TriRide – Cab Booking System
+  <div class="cards">
+
+    <div class="card project-card"
+      onclick="openModal(this)"
+      data-img="triride.png"
+      data-title="TriRide – Cab Booking System"
+      data-desc="A web-based cab booking application with self-drive option, secure authentication, and user-friendly interface."
+      data-tech="HTML, CSS, JavaScript, Java, MySQL"
+      data-github="https://github.com/yourusername/triride"
+      data-live="#">
+      TriRide – Cab Booking System
+    </div>
+
+    <div class="card project-card"
+      onclick="openModal(this)"
+      data-img="airline.png"
+      data-title="Airline Management System"
+      data-desc="A system to manage flight schedules, passengers, and ticket booking efficiently."
+      data-tech="Java, JSP, Servlets, MySQL"
+      data-github="https://github.com/yourusername/airline"
+      data-live="#">
+      Airline Management System
+    </div>
+
+    <div class="card project-card"
+      onclick="openModal(this)"
+      data-img="college.png"
+      data-title="College Finder Platform"
+      data-desc="A platform to help students find colleges based on course, location, and eligibility."
+      data-tech="HTML, CSS, JavaScript"
+      data-github="https://github.com/yourusername/college-finder"
+      data-live="#">
+      College Finder Platform
+    </div>
+
   </div>
-
-  <div class="card project-card"
-    data-img="airline.png"
-    data-title="Airline Management System"
-    data-desc="A system to manage flight schedules, passengers, and ticket booking efficiently."
-    data-tech="Java, JSP, Servlets, MySQL">
-    Airline Management System
-  </div>
-
-  <div class="card project-card"
-    data-img="college.png"
-    data-title="College Finder Platform"
-    data-desc="A platform to help students find colleges based on course, location, and eligibility."
-    data-tech="HTML, CSS, JavaScript">
-    College Finder Platform
-  </div>
-
-</div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications" class="glass reveal">
   <h2>Certifications</h2>
 
@@ -148,7 +159,7 @@
 
     <div class="cert-card">
       <h4>Java Programming</h4>
-      <p>Core Java & OOP Concepts</p>
+      <p>Core Java & OOP</p>
       <span>NPTEL / College</span>
     </div>
 
@@ -159,31 +170,25 @@
     </div>
   </div>
 </section>
+
+<!-- CONTACT -->
 <section id="contact" class="glass">
   <h2>Contact Me</h2>
-  <p>
-    I’m open to internships, entry-level roles, and collaborative projects.
-    Feel free to reach out if you’d like to work together or discuss opportunities.
-  </p>
+  <p>I’m open to internships, entry-level roles, and collaborative projects.</p>
 
   <div class="contact-box">
     <p><strong>Email:</strong> rahulsaksena@example.com</p>
-    <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
     <p><strong>Location:</strong> India</p>
 
     <div class="contact-links">
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
     </div>
   </div>
 </section>
+
 <footer>
   <p>© 2025 Rahul | Full Stack Developer</p>
-  <p>
-    <a href="#">LinkedIn</a> |
-    <a href="#">GitHub</a> |
-    <a href="#">Email</a>
-  </p>
 </footer>
 
 <script src="script.js"></script>
